@@ -8,18 +8,23 @@ use Illuminate\Http\Request;
 
 class ProjectsController extends RestController
 {
+//    ToDo add service, dto and query filters
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-//        ToDo add service and dto
+        $projects = Project::with(['category', 'stageOfReady', 'company']);
+
+        if ($request->has('categories')) {
+            $projects->whereIn('category_id', $request->get('categories'));
+        }
+
         return $this->sendResponse(
-            ProjectResource::collection(
-                Project::with(['category', 'stageOfReady', 'company'])->get()
-            )
+            ProjectResource::collection($projects->get())
         );
     }
 

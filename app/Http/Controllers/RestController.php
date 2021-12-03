@@ -15,13 +15,6 @@ class RestController extends Controller
      */
     public function sendResponse($data, string $message = '', string $type = 'success')
     {
-//        if ($data instanceof JsonResource) {
-//            return $data->additional([
-//                'type' => $type,
-//                'message' => $message,
-//            ]);
-//        }
-
         return response()->json($data, 200);
     }
 }
