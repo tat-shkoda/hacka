@@ -45,11 +45,11 @@ class ProjectsSeeder extends Seeder
                 'url' => 'http://example.com',
                 'original_source' => 'Источник',
                 'presentation_link' => 'Ссылка на презентацию',
-                'logo' => 'url',
+                'logo' => 'https://slovnet.ru/wp-content/uploads/2019/10/15-52.jpg',
                 'images' => json_encode([
-                    'url',
-                    'url',
-                    'url',
+                    'https://image.krasview.ru/video/d5270401c566718/__5.jpg',
+                    'https://slovnet.ru/wp-content/uploads/2019/10/15-52.jpg',
+                    'https://heaclub.ru/tim/0c2febb70110f54660c3fa64ce24a5e4/kak-uznat-dlinu-udava.jpg',
                 ]),
             ],
             [
@@ -74,11 +74,11 @@ class ProjectsSeeder extends Seeder
                 'url' => 'http://example.com',
                 'original_source' => 'Источник',
                 'presentation_link' => 'Ссылка на презентацию',
-                'logo' => 'url',
+                'logo' => 'https://slovnet.ru/wp-content/uploads/2019/10/15-52.jpg',
                 'images' => json_encode([
-                    'url',
-                    'url',
-                    'url',
+                    'https://image.krasview.ru/video/d5270401c566718/__5.jpg',
+                    'https://slovnet.ru/wp-content/uploads/2019/10/15-52.jpg',
+                    'https://heaclub.ru/tim/0c2febb70110f54660c3fa64ce24a5e4/kak-uznat-dlinu-udava.jpg',
                 ]),
             ],
         ];
