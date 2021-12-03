@@ -15,9 +15,10 @@ class ProjectsController extends RestController
      */
     public function index()
     {
+//        ToDo add service and dto
         return $this->sendResponse(
             ProjectResource::collection(
-                Project::with(['category'])->get()
+                Project::with(['category', 'stageOfReady', 'company'])->get()
             )
         );
     }
@@ -44,7 +45,7 @@ class ProjectsController extends RestController
     public function show(Project $project)
     {
         return $this->sendResponse(ProjectResource::make(
-            $project->load(['category', 'stageOfReady']))
+            $project->load(['category', 'stageOfReady', 'company']))
         );
     }
 

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\Company;
 use App\Models\Project;
 use App\Models\StageOfReady;
 use App\Models\SubCategory;
@@ -19,6 +20,7 @@ class ProjectsSeeder extends Seeder
     {
         $categories = Category::all()->toArray();
         $stages = StageOfReady::all()->toArray();
+        $companies = Company::all()->toArray();
 
         $items = [
             [
@@ -28,7 +30,7 @@ class ProjectsSeeder extends Seeder
                 'subcategory_id' => $this->getRandomSubCategory($catId),
                 'short_description' => 'Короткое описание',
                 'benefit' => 'benefit',
-                'company_id' => 'company_id',
+                'company_id' => $companies[array_rand($companies)]['id'],
                 'certification_type' => 'да, требуется сертификация и у нас она есть',
                 'firstname' => 'Василий',
                 'lastname' => 'Иваной',
@@ -51,7 +53,7 @@ class ProjectsSeeder extends Seeder
                 'subcategory_id' => $this->getRandomSubCategory($catId),
                 'short_description' => 'Короткое описание второго проекта',
                 'benefit' => 'benefit',
-                'company_id' => 'company_id',
+                'company_id' => $companies[array_rand($companies)]['id'],
                 'certification_type' => 'да, требуется сертификация и у нас она есть',
                 'firstname' => 'Дмитрий',
                 'lastname' => 'Петров',

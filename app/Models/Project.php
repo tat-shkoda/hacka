@@ -23,11 +23,11 @@ class Project extends Model
 
     public function stageOfReady(): belongsTo
     {
-        return $this->belongsTo(StageOfReady::class, 'stage_of_ready_id', 'id');
+        return $this->belongsTo(StageOfReady::class, 'stages_of_ready_id', 'id');
     }
 
-//    ToDo
-//    public function company()
-//    {
-//    }
+    public function company(): belongsTo
+    {
+        return $this->belongsTo(Company::class, 'company_id', 'id');
+    }
 }

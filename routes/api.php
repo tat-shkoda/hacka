@@ -27,4 +27,4 @@ Route::apiResource('companies', 'App\Http\Controllers\CompaniesController');
 Route::apiResource('projects', 'App\Http\Controllers\ProjectsController');
 Route::apiResource('tasks', 'App\Http\Controllers\TasksController');
 
-Route::apiResource('colaboration/accept/:id', 'App\Http\Controllers\ColaborationController');
+Route::apiResource('collaboration/accept/:id', 'App\Http\Controllers\CollaborationController');
