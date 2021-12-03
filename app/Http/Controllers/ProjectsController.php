@@ -19,6 +19,10 @@ class ProjectsController extends RestController
     {
         $projects = Project::with(['category', 'stageOfReady', 'company', 'status']);
 
+        if ($request->has('ids')) {
+            $projects->whereIn('id', $request->get('ids'));
+        }
+
         if ($request->has('categories')) {
             $projects->whereIn('category_id', $request->get('categories'));
         }
