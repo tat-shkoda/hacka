@@ -17,6 +17,16 @@ class ProjectStatusesAndCriterialsSeeder extends Seeder
     {
         $projectStatuses = [
             [
+                'name' => 'Заявка подана',
+                'description' => 'Заявка подана',
+                'search_key' => 'Заявка подана',
+            ],
+            [
+                'name' => 'Заявка отклонена',
+                'description' => 'Заявка отклонена',
+                'search_key' => 'Заявка отклонена',
+            ],
+            [
                 'name' => 'Скрининг',
                 'description' => 'Скрининг',
                 'search_key' => 'Скрининг',

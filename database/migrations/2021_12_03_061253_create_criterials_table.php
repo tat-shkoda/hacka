@@ -17,8 +17,8 @@ class CreateCriterialsTable extends Migration
             $table->bigIncrements('id');
             $table->string('text');
             $table->bigInteger('project_status_id')->unsigned();
-//            $table->foreign('project_status_id')->references('id')
-//                ->on('project_statuses')->onDelete('cascade');
+            $table->foreign('project_status_id')->references('id')
+                ->on('project_statuses')->onDelete('cascade');
         });
     }
 

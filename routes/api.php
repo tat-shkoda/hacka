@@ -19,7 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
 Route::get('categories', CategoriesController::class);
 Route::apiResource('projectStatuses', 'App\Http\Controllers\ProjectStatusesController');
 Route::apiResource('stagesOfReady', 'App\Http\Controllers\StagesOfReadyController');
@@ -27,3 +26,5 @@ Route::apiResource('cities', 'App\Http\Controllers\CitiesController');
 Route::apiResource('companies', 'App\Http\Controllers\CompaniesController');
 Route::apiResource('projects', 'App\Http\Controllers\ProjectsController');
 Route::apiResource('tasks', 'App\Http\Controllers\TasksController');
+
+Route::apiResource('colaboration/accept/:id', 'App\Http\Controllers\ColaborationController');
