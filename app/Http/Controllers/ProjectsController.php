@@ -27,7 +27,7 @@ class ProjectsController extends RestController
             $projects->whereIn('status_id', $request->get('statuses'));
         }
 
-        if ($request->has('stage')) {
+        if ($request->has('stages')) {
             $projects->whereIn('stage_id', $request->get('stagesOfReady'));
         }
 
