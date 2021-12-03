@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Criterial;
 use App\Models\ProjectStatus;
 use Illuminate\Database\Seeder;
 
@@ -61,13 +62,14 @@ class ProjectStatusesAndCriterialsSeeder extends Seeder
         ];
 
         foreach ($projectStatuses as $projectStatus) {
-            ProjectStatus::create($projectStatus);
+            $createdProjectStatuses = ProjectStatus::firstOrCreate(['name' => $projectStatus['name']]);
 
-            if (isset($project['criterials'])) {
-                foreach ($project['criterials'] as $criterial) {
-//                    Crireterial::create(['name' => $criterial]);
-//                    Crireterial::create(['name' => $criterial]);
-                    dd(Crireterial::firstOrCreate(['name' => $criterial]));
+            if (isset($projectStatus['criterials'])) {
+                foreach ($projectStatus['criterials'] as $criterial) {
+                    Criterial::firstOrCreate([
+                        'text' => $criterial,
+                        'project_status_id' => $createdProjectStatuses->id
+                    ]);
                 }
             }
         }

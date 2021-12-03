@@ -27,7 +27,7 @@ class StagesOfReadySeeder extends Seeder
         ];
 
         foreach ($stagesOfReady as $stageOfReady) {
-            StageOfReady::create($stageOfReady);
+            StageOfReady::firstOrCreate($stageOfReady);
         }
     }
 }

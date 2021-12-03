@@ -68,10 +68,10 @@ class CategoryAndSubCategorySeeder extends Seeder
         ];
 
         foreach ($categories as $category) {
-            $createdCategory = Category::create(['name' => $category['name']]);
+            $createdCategory = Category::firstOrCreate(['name' => $category['name']]);
 
             foreach ($category['subcategories'] as $subcategory) {
-                SubCategory::create([
+                SubCategory::firstOrCreate([
                     'category_id' => $createdCategory->id,
                     'name' => substr($subcategory, 0, 254),
                 ]);

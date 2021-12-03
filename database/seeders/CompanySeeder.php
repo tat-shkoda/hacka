@@ -26,6 +26,9 @@ class CompanySeeder extends Seeder
         $cities = City::all()->toArray();
 
         foreach ($companies as $company) {
+            if (Company::where('name', '=', $company)->first())
+                continue;
+
             Company::create([
                 'name' => $company,
                 'description' => $company,

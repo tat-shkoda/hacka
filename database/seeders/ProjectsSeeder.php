@@ -70,7 +70,10 @@ class ProjectsSeeder extends Seeder
         ];
 
         foreach ($items as $item) {
-            Project::create($item);
+            if ($project = Project::where(['name' => $item['name']])->first())
+                continue;
+
+            Project::firstOrCreate($item);
         }
     }
 

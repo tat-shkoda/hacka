@@ -17,7 +17,7 @@ class ProjectsController extends RestController
     {
         return $this->sendResponse(
             ProjectResource::collection(
-                Project::with('category')->get()
+                Project::with(['category'])->get()
             )
         );
     }
@@ -33,7 +33,6 @@ class ProjectsController extends RestController
         $project = Project::input($request->input());
 
         return $this->sendResponse(ProjectResource::make($project));
-
     }
 
     /**
@@ -44,7 +43,9 @@ class ProjectsController extends RestController
      */
     public function show(Project $project)
     {
-        return $this->sendResponse(ProjectResource::make($project));
+        return $this->sendResponse(ProjectResource::make(
+            $project->load(['category', 'stageOfReady']))
+        );
     }
 
     /**
