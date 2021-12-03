@@ -45,6 +45,12 @@ class ProjectsSeeder extends Seeder
                 'url' => 'http://example.com',
                 'original_source' => 'Источник',
                 'presentation_link' => 'Ссылка на презентацию',
+                'logo' => 'url',
+                'images' => json_encode([
+                    'url',
+                    'url',
+                    'url',
+                ]),
             ],
             [
                 'name' => 'Тестовый проект 2',
@@ -68,6 +74,12 @@ class ProjectsSeeder extends Seeder
                 'url' => 'http://example.com',
                 'original_source' => 'Источник',
                 'presentation_link' => 'Ссылка на презентацию',
+                'logo' => 'url',
+                'images' => json_encode([
+                    'url',
+                    'url',
+                    'url',
+                ]),
             ],
         ];
 

@@ -52,6 +52,8 @@ class CreateProjectsTable extends Migration
             $table->text('url')->nullable();;
             $table->text('original_source')->nullable();
             $table->text('presentation_link')->nullable();
+            $table->text('logo')->nullable();
+            $table->json('images')->nullable();
             $table->timestamps();
         });
     }
