@@ -17,10 +17,14 @@ class ProjectsController extends RestController
      */
     public function index(Request $request)
     {
-        $projects = Project::with(['category', 'stageOfReady', 'company']);
+        $projects = Project::with(['category', 'stageOfReady', 'company', 'status']);
 
         if ($request->has('categories')) {
             $projects->whereIn('category_id', $request->get('categories'));
+        }
+
+        if ($request->has('statuses')) {
+            $projects->whereIn('status_id', $request->get('categories'));
         }
 
         return $this->sendResponse(
@@ -50,7 +54,7 @@ class ProjectsController extends RestController
     public function show(Project $project)
     {
         return $this->sendResponse(ProjectResource::make(
-            $project->load(['category', 'stageOfReady', 'company']))
+            $project->load(['category', 'stageOfReady', 'company', 'status']))
         );
     }
 

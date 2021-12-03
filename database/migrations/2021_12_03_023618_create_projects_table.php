@@ -30,7 +30,15 @@ class CreateProjectsTable extends Migration
 
             $table->text('short_description')->nullable();
             $table->text('benefit')->nullable();
-            $table->text('company_id')->nullable();
+
+            $table->bigInteger('company_id')->unsigned()->nullable();
+            $table->foreign('company_id')->references('id')
+                ->on('companies')->onDelete('cascade');
+
+            $table->bigInteger('status_id')->unsigned()->nullable();
+            $table->foreign('status_id')->references('id')
+                ->on('project_statuses')->onDelete('cascade');
+
             $table->enum('certification_type', [
                 'да, требуется сертификация и у нас она есть',
                 'да, требуется сертификация, но  у нас ее нет',
