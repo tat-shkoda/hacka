@@ -24,7 +24,15 @@ class ProjectsController extends RestController
         }
 
         if ($request->has('statuses')) {
-            $projects->whereIn('status_id', $request->get('categories'));
+            $projects->whereIn('status_id', $request->get('statuses'));
+        }
+
+        if ($request->has('stage')) {
+            $projects->whereIn('stage_id', $request->get('stagesOfReady'));
+        }
+
+        if ($request->has('cities')) {
+            $projects->whereIn('city_id', $request->get('cities'));
         }
 
         return $this->sendResponse(

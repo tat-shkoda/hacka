@@ -22,11 +22,6 @@ class ProjectStatusesAndCriterialsSeeder extends Seeder
                 'search_key' => 'Заявка подана',
             ],
             [
-                'name' => 'Заявка отклонена',
-                'description' => 'Заявка отклонена',
-                'search_key' => 'Заявка отклонена',
-            ],
-            [
                 'name' => 'Скрининг',
                 'description' => 'Скрининг',
                 'search_key' => 'Скрининг',
@@ -68,6 +63,11 @@ class ProjectStatusesAndCriterialsSeeder extends Seeder
                 'name' => 'Инвестирование',
                 'description' => 'Инвестирование',
                 'search_key' => 'Инвестирование',
+            ],
+            [
+                'name' => 'Заявка отклонена',
+                'description' => 'Заявка отклонена',
+                'search_key' => 'Заявка отклонена',
             ],
         ];
 
