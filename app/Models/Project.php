@@ -11,6 +11,32 @@ class Project extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'stages_of_ready_id',
+        'category_id',
+        'subcategory_id',
+        'short_description',
+        'benefit',
+        'company_id',
+        'certification_type',
+        'firstname',
+        'lastname',
+        'surname',
+        'phone_number',
+        'email',
+        'telegram_id',
+        'other_data',
+        'email_company',
+        'company_name',
+        'inn',
+        'url',
+        'original_source',
+        'presentation_link',
+        'logo',
+        'images',
+    ];
+
     public function category(): belongsTo
     {
         return $this->belongsTo(Category::class, 'category_id', 'id');

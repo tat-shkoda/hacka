@@ -39,7 +39,7 @@ class ProjectsController extends RestController
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Project $project
      * @return \Illuminate\Http\Response
      */
     public function show(Project $project)
@@ -53,12 +53,16 @@ class ProjectsController extends RestController
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Project $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Project $project)
     {
-        //
+        $project->update($request->input());
+
+        return $this->sendResponse(ProjectResource::make(
+            $project->load(['category', 'stageOfReady', 'company']))
+        );
     }
 
     /**
