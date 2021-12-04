@@ -1,6 +1,7 @@
 ### Реализованная функциональность
 - список, создание и редактирование проектов
 - фильтрация проектов
+- создание заявок
 - список городов
 - список статусов проектов
 - этапы проектов
@@ -40,6 +41,14 @@ php artisan db:seed
 
 ```
 GET /api/projects
+
+фильтры
+{
+  ids[]
+  categories[]
+  statuses[]
+  stages[]
+}
 
 [
   {
@@ -148,6 +157,7 @@ GET /api/projects/1
   }
 }
 
+POST /api/projects
 PUT /api/projects/1
 
 request
@@ -222,4 +232,22 @@ response
     "comment": "АМПП"
   }
 }
+
+GET /api/tasks
+
+POST /api/tasks
+{
+  what_hurts          stting
+  symptoms            stting
+  consequences        stting
+  reason              stting
+  objects             stting
+  deadlines           stting
+  what_attempted      stting
+  contacts            stting
+}
+
+GET /api/projectStatuses
+GET /api/stagesOfReady
+GET /api/categories
 ```
