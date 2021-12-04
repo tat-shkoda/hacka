@@ -32,7 +32,7 @@ class ProjectsController extends RestController
         }
 
         if ($request->has('stages')) {
-            $projects->whereIn('stage_id', $request->get('stagesOfReady'));
+            $projects->whereIn('stages_of_ready_id', $request->get('stages'));
         }
 
         if ($request->has('cities')) {
