@@ -52,7 +52,7 @@ class ProjectsController extends RestController
      */
     public function store(Request $request)
     {
-        $project = Project::input($request->input());
+        $project = Project::create($request->input());
 
         return $this->sendResponse(ProjectResource::make($project));
     }
